@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<style>
+    body{
+    background-image: linear-gradient(-90deg, #e42ccb 10%, #00d4ff 70%,#16bea8 100%);
+  }
+
+  .h1{
+      font-size:40px;
+      font-weight: bold;
+      color:white;
+      text-decoration: none;
+  }
+
+    .block{
+      border-radius: 5px;
+      margin: 30px;
+      display: inline-block;
+      background-image: linear-gradient(-90deg, #cf12b6 10%, #12c4e7 70%,#16b39e 100%);
+    }
+
+        .l1 {
+        position: relative;
+        top: 5px;
+        color: #ffffff;
+        padding: 10px;
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 18px;
+        display: inline-block;
+    }
+
+
+
+    input {
+        background-image: linear-gradient(90deg, #eb81dc 10%, #74d4e7 70%,#6ce6d5 100%);
+        border: none;
+        color: rgb(0, 0, 0);
+        padding: 5px 25px;
+        text-decoration: none;
+        margin: 4px 4px;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        width: 130px;
+    }
+
+    input:hover {
+         background-image: linear-gradient(-90deg, #eb81dc 10%, #74d4e7 70%,#6ce6d5 100%);
+    }
+
+        select{
+        background-image: linear-gradient(90deg, #eb81dc 10%, #74d4e7 70%,#6ce6d5 100%);
+        border: none;
+        color: rgb(0, 16, 155);
+        padding: 5px 25px;
+        text-decoration: none;
+        margin: 4px 4px;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    select:hover{
+        background-image: linear-gradient(-90deg, #eb81dc 10%, #74d4e7 70%,#6ce6d5 100%);
+    }
+
+        .divs {
+        margin: 50px;
+    }
+
+        button {
+        background-image: linear-gradient(90deg, #e42ccb 10%, #00d4ff 70%,#16bea8 100%);
+        width: 150px;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-image: linear-gradient(-90deg, #e42ccb 10%, #00d4ff 70%,#16bea8 100%);
+        width: 170px;
+    }
+
+    .main{
+      margin-top: 30px;
+    }
+
+    .cards{
+      width:30%;
+      border-radius: 5px;
+      margin:20px;
+      display: inline-block;
+    }
+
+    .image img{
+      width:100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .title{
+      font-family:Arial, Helvetica, sans-serif;
+      text-align: center;
+      color: rgb(255, 217, 0);
+      font-size:27px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .error{
+        font-size: 30px;
+        font-weight:bold;
+        color:rgb(255, 255, 255);
+        text-decoration: none;
+        margin: 20px;
+    }
+
+    .error hover{
+        color:#a1e1ff;
+    }
+
+    .rrr{
+        font-size: 20px;
+        font-weight: bold;
+        color:#08ffde;
+        text-decoration: none;
+    }
+
+    .run{
+        font-size: 20px;
+        font-weight: bold;
+        color:#ffffff;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    .war{
+        font-size:20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+    }
+
+</style>
+
+<title>Home</title>
+
+<body>
+
+    <center>
+        <h1><a class="h1">T20 WORLD CUP 1ST INNING SCORE PREDICTION</a></h1>
+    </center>
+
+    <center>
+<div class="block">
+        <a class="war">Try after five overs completed</a>
+        <form action="home" method="post" autocomplete="off">
+            <div class="divs">
+                <div>
+                    <label for="team" class="l1">Batting Team</label>
+                    <select id="battingteam" name="battingteam">
+                        {% for i in range(0,teams|length) %}
+                        <option value={{i}}>{{teams[i]}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="team" class="l1">Bowling Team</label>
+                    <select id="bowlingteam" name="bowlingteam">
+                        {% for i in range(0,teams|length) %}
+                        <option value={{i}}>{{teams[i]}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div>
+                    <label for="city" class="l1">City</label>
+                    <select id="city" name="city">
+                        {% for i in range(0,city|length) %}
+                        <option value={{i}}>{{city[i]}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div>
+                    <label for="Score" class="l1">Current Score</label>
+                    <input type="text" id="myTextBox1" name="score" required="required">
+                </div>
+                
+                <div>
+                    <label for="wickets" class="l1">Wickets</label>
+                    <input type="text" id="myTextBox1" name="wickets" required="required">
+                </div> 
+                
+                <div>
+                    <label for="overs" class="l1">Overs</label>
+                    <input type="text" id="myTextBox1" name="overs" required="required" placeholder="5-20">
+                </div>
+
+                <div>
+                    <label for="last_five" class="l1">Runs Scored In past 5 Overs</label>
+                    <input type="text" id="myTextBox1" name="last_five" required="required">
+                </div>
+                
+                <br>
+            </div>
+                    <button class="mb-3">
+                        <span>PREDICT</span>
+                    </button>
+        </form>
+</div>
+</center>
+
+                {% if pred==1 %}
+                <center>
+                <div class="block">
+                    <div class="main">
+                        <div class="cards">
+                            <div class="image">
+                                <img src="static/{{bteam}}.jpg">
+                            </div>
+                            <a class="rrr">{{bteam}}-{{current_score}}/{{wickets_fall}} ({{overs}})</a>
+
+                            
+                        </div>
+                    
+                    <center>
+                        <div>
+                            <a class="title">Projected Score-{{predicted}}</a>
+                        </div>
+                        <div>
+                            </br>
+                            <a class="run">By CRR-{{runs_c}}</a>
+                        </br>
+                            <a class="run">6 RPO-{{runs_6}}</a>
+                            </br>
+                            <a class="run">8 RPO-{{runs_8}}</a>
+                            </br>
+                            <a class="run">10 RPO-{{runs_10}}</a>
+                            </br>
+                            <a class="run">12 RPO-{{runs_12}}</a>
+                    </center>
+                    </div>
+
+                    </div>
+
+                    </center>
+            {% endif %}
+
+{% if pred==2 %}
+<center>
+    <div class="block">
+        <a class="error">{{error}}</a>
+    </div>
+</center>
+{% endif %}
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
