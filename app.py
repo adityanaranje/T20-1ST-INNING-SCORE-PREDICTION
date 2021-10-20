@@ -78,6 +78,16 @@ def home():
                             'crr':[crr],'last_five':[last_five], 'batting_team_avg':[batting_team_avg],
                             'bowling_team_avg':[bowling_team_avg], 'city_avg':[city_avg]})
         predicted = int(model.predict(data))
+        if predicted<current_score:
+            predicted =  int(current_score+int(6.5*balls_left/6))
+        
+        
+        if predicted-current_score<6 and ball>114:
+            predicted = predicted+6
+        
+        if predicted-current_score>6 and predicted-current_score<15 and wickets<8 and balls>104:
+            predicted = predicted+10
+        
         runs_c = int(current_score+int(crr*balls_left/6))
         runs_6 = int(current_score+int(6*balls_left/6))
         runs_8 = int(current_score+int(8*balls_left/6))
