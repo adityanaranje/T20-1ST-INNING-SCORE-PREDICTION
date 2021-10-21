@@ -81,7 +81,7 @@ def home():
         
         
         if predicted<current_score:
-            predicted =  int(current_score+int(6.5*balls_left/6))
+            predicted =  int(current_score+int(7*balls_left/6))
 
 
         if predicted-current_score<=6 and balls>114:
@@ -92,6 +92,9 @@ def home():
 
         if predicted-current_score>0 and predicted-current_score<25 and wickets<7 and balls>90:
             predicted = predicted+25
+            
+        if predicted-current_score<35 and wickets<7 and balls<=90 and balls>60:
+            predicted = predicted+(35-abs(predicted-current_score))
         
         runs_c = int(current_score+int(crr*balls_left/6))
         runs_6 = int(current_score+int(6*balls_left/6))
